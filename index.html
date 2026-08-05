@@ -133,11 +133,9 @@ header{
 <input type="number" id="cantidad1" value="1" min="1" style="width:60px;text-align:center;">
 
 <br><br>
-        <a class="boton"
-href="https://wa.me/5492324502846?text=Hola%20LAUKA!%20👋%0A%0AQuiero%20comprar%20el%20siguiente%20producto:%0A%0A🛍%20Producto:%20Short%20Pollera%0A📏%20Talle:%20%0A🎨%20Color:%20%0A📦%20Cantidad:%20%0A%0AMuchas%20gracias!"
-target="_blank">
+        <button class="boton" onclick="comprarProducto()">
 Comprar
-</a>
+</button>
 
     </div>
 
@@ -145,6 +143,36 @@ Comprar
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+<script>
 
+function comprarProducto(){
+
+let talle = document.getElementById("talle1").value;
+
+let color = document.getElementById("color1").value;
+
+let cantidad = document.getElementById("cantidad1").value;
+
+let mensaje =
+`Hola LAUKA! 👋
+
+Quiero comprar el siguiente producto:
+
+🛍 Producto: Short Pollera
+
+📏 Talle: ${talle}
+
+🎨 Color: ${color}
+
+📦 Cantidad: ${cantidad}`;
+
+window.open(
+"https://wa.me/5492324502846?text="+encodeURIComponent(mensaje),
+"_blank"
+);
+
+}
+
+</script>
 </body>
 </html>
