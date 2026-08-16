@@ -1,218 +1,911 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAUKA - Tienda de Ropa</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial;
-            background-color: #ffffff;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
             text-align: center;
+            color: #111;
         }
 
-.logo{
-    width:100%;
-    display:block;
-    margin:0;
-    border-radius:0;
-}
+        header {
+            background: white;
+            padding: 0;
+            margin: 0;
+        }
 
-header{
-    background:white;
-    padding:0;
-    margin:0;
-}
-
-.banner{
-    background:#111;
-    color:white;
-    padding:40px;
-    margin-bottom:30px;
-}
-.productos{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    padding:30px;
-}
-        .producto{
-    background:white;
-    padding:15px;
-    border-radius:10px;
-    width:220px;
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
-    transition:.3s;
-}
-
-.producto:hover{
-    transform:translateY(-5px);
-}
-
-        img {
+        .logo {
             width: 100%;
-            border-radius: 10px;
+            display: block;
+            margin: 0;
+            border-radius: 0;
         }
 
-        .boton{
-    background:#111;
-    color:white;
-    padding:12px 25px;
-    font-weight:bold;
-    text-decoration:none;
-    border-radius:6px;
-    display:block;
-    width:160px;
-    margin:15px auto 0;
-    text-align:center;
-}
+        header p {
+            margin: 10px 0 0;
+        }
+
+        .banner {
+            background: #111;
+            color: white;
+            padding: 40px 20px;
+            margin-bottom: 20px;
+        }
+
+        .banner h2 {
+            margin: 0 0 10px;
+        }
+
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            justify-items: center;
+        }
+
+        .producto {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 250px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.15);
+            transition: .3s;
+        }
+
+        .producto:hover {
+            transform: translateY(-5px);
+        }
+
+        .producto img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .producto h4 {
+            min-height: 40px;
+            margin: 12px 0 8px;
+        }
+
+        .precio {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 8px 0 15px;
+        }
+
+        .producto label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .producto select,
+        .producto input {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: white;
+        }
+
+        .boton {
+            background: #111;
+            color: white;
+            padding: 12px 25px;
+            font-weight: bold;
+            border: none;
+            text-decoration: none;
+            border-radius: 6px;
+            display: block;
+            width: 100%;
+            margin: 18px auto 0;
+            text-align: center;
+            cursor: pointer;
+        }
 
         .boton:hover {
             background-color: #333;
         }
+
+        @media (max-width: 600px) {
+            .productos {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+                padding: 15px;
+            }
+
+            .producto {
+                max-width: none;
+                padding: 10px;
+            }
+
+            .producto h4 {
+                font-size: 14px;
+                min-height: auto;
+            }
+
+            .precio {
+                font-size: 17px;
+            }
+
+            .banner {
+                padding: 30px 15px;
+            }
+        }
     </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
 </head>
 
 <body>
 
-    <header>
-
-<img src="lauty/logo.png" class="logo" alt="LAUKA">
-
-<p>Tienda de ropa femenina 💕</p>
-
+<header>
+    <img src="lauty/logo.png" class="logo" alt="LAUKA">
+    <p>Tienda de ropa femenina 💕</p>
 </header>
 
 <section class="banner">
-
-<h2>Nueva colección LAUKA</h2>
-
-<p>Moda femenina • Envíos a todo el país</p>
-
+    <h2>Nueva colección LAUKA</h2>
+    <p>Moda femenina • Envíos a todo el país</p>
 </section>
 
-    <h3>PRODUCTOS</h3>
+<h3>PRODUCTOS</h3>
 
 <div class="productos">
+        <article class="producto">
+            <a href="lauty/pollera.jpg" data-lightbox="producto1" data-title="Short Pollera">
+                <img src="lauty/pollera.jpg" alt="Short Pollera">
+            </a>
+            <a href="lauty/pollera0.jpg" data-lightbox="producto1" data-title="Short Pollera"></a>
+            <a href="lauty/pollera10.jpg" data-lightbox="producto1" data-title="Short Pollera"></a>
+            <h4>Short Pollera</h4>
+            <p class="precio">$12.800</p>
 
-    <div class="producto">
+            <label><b>Talle:</b></label>
+            <select id="talle1">
+                <option>UNICO</option>
+            </select>
 
-        <h4>Short pollera</h4>
+            <label><b>Color:</b></label>
+            <select id="color1">
+                <option>Negro</option>
+                <option>Beige</option>
+                <option>Choco</option>
+            </select>
 
-        <a href="lauty/pollera.jpg" data-lightbox="pollera">
-            <img src="lauty/pollera.jpg" alt="Short Pollera">
-        </a>
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad1" value="1" min="1">
 
-        <a href="lauty/pollera0.jpg" data-lightbox="pollera"></a>
-        <a href="lauty/pollera10.jpg" data-lightbox="pollera"></a>
+            <button class="boton" onclick="comprarProducto(1, 'Short Pollera', '$12.800')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/pollera6.jpg" data-lightbox="producto2" data-title="Pollera Eco Cuero">
+                <img src="lauty/pollera6.jpg" alt="Pollera Eco Cuero">
+            </a>
+            <a href="lauty/pollera8.jpg" data-lightbox="producto2" data-title="Pollera Eco Cuero"></a>
+            <h4>Pollera Eco Cuero</h4>
+            <p class="precio">$15.500</p>
 
-        <p>$12.800</p>
-<label><b>Talle:</b></label><br>
+            <label><b>Talle:</b></label>
+            <select id="talle2">
+                <option>3</option>
+                <option>4</option>
+            </select>
 
-<select id="talle1">
-    <option>UNICO</option>
-    
-</select>
+            <label><b>Color:</b></label>
+            <select id="color2">
+                <option>Negro</option>
+            </select>
 
-<br><br>
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad2" value="1" min="1">
 
-<label><b>Color:</b></label><br>
+            <button class="boton" onclick="comprarProducto(2, 'Pollera Eco Cuero', '$15.500')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/short-ecocuero1.jpg" data-lightbox="producto3" data-title="Short Pollera Eco Cuero">
+                <img src="lauty/short-ecocuero1.jpg" alt="Short Pollera Eco Cuero">
+            </a>
+            <a href="lauty/short-ecocuero2.jpg" data-lightbox="producto3" data-title="Short Pollera Eco Cuero"></a>
+            <h4>Short Pollera Eco Cuero</h4>
+            <p class="precio">$15.500</p>
 
-<select id="color1">
-    <option>Negro</option>
-    <option>Beige</option>
-    <option>Choco</option>
-</select>
+            <label><b>Talle:</b></label>
+            <select id="talle3">
+                <option>3</option>
+            </select>
 
-<br><br>
+            <label><b>Color:</b></label>
+            <select id="color3">
+                <option>Negro</option>
+            </select>
 
-<label><b>Cantidad:</b></label><br>
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad3" value="1" min="1">
 
-<input type="number" id="cantidad1" value="1" min="1" style="width:60px;text-align:center;">
+            <button class="boton" onclick="comprarProducto(3, 'Short Pollera Eco Cuero', '$15.500')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/pollera-basica1.jpg" data-lightbox="producto4" data-title="Pollera Eco Cuero Básica">
+                <img src="lauty/pollera-basica1.jpg" alt="Pollera Eco Cuero Básica">
+            </a>
 
-<br><br>
-        <button class="boton" onclick="comprarProducto()">
-Comprar
-</button>
+            <h4>Pollera Eco Cuero Básica</h4>
+            <p class="precio">$13.500</p>
 
-    </div>
+            <label><b>Talle:</b></label>
+            <select id="talle4">
+                <option>XS</option>
+            </select>
 
+            <label><b>Color:</b></label>
+            <select id="color4">
+                <option>Negro</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad4" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(4, 'Pollera Eco Cuero Básica', '$13.500')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/pollera-volados1.jpg" data-lightbox="producto5" data-title="Pollera Volados Eco Cuero">
+                <img src="lauty/pollera-volados1.jpg" alt="Pollera Volados Eco Cuero">
+            </a>
+            <a href="lauty/pollera-volados2.jpg" data-lightbox="producto5" data-title="Pollera Volados Eco Cuero"></a>
+            <h4>Pollera Volados Eco Cuero</h4>
+            <p class="precio">$12.500</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle5">
+                <option>XS</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color5">
+                <option>Negro</option>
+                <option>Verde Militar</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad5" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(5, 'Pollera Volados Eco Cuero', '$12.500')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/short-pollera1.jpg" data-lightbox="producto6" data-title="Short Pollera Eco Cuero">
+                <img src="lauty/short-pollera1.jpg" alt="Short Pollera Eco Cuero">
+            </a>
+            <a href="lauty/short-pollera2.jpg" data-lightbox="producto6" data-title="Short Pollera Eco Cuero"></a>
+            <h4>Short Pollera Eco Cuero</h4>
+            <p class="precio">$12.800</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle6">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color6">
+                <option>Choco</option>
+                <option>Negro</option>
+                <option>Beige</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad6" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(6, 'Short Pollera Eco Cuero', '$12.800')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/short-ecocuero-basico1.jpg" data-lightbox="producto7" data-title="Short Eco Cuero">
+                <img src="lauty/short-ecocuero-basico1.jpg" alt="Short Eco Cuero">
+            </a>
+
+            <h4>Short Eco Cuero</h4>
+            <p class="precio">$14.800</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle7">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color7">
+                <option>Negro</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad7" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(7, 'Short Eco Cuero', '$14.800')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/short-pollera-lentejuelas1.jpg" data-lightbox="producto8" data-title="Short Pollera POLENT">
+                <img src="lauty/short-pollera-lentejuelas1.jpg" alt="Short Pollera POLENT">
+            </a>
+            <a href="lauty/short-pollera-lentejuelas2.jpg" data-lightbox="producto8" data-title="Short Pollera POLENT"></a>
+            <h4>Short Pollera POLENT</h4>
+            <p class="precio">$19.000</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle8">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color8">
+                <option>Plateado</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad8" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(8, 'Short Pollera POLENT', '$19.000')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/mini-short-lentejuelas-blanco1.jpg" data-lightbox="producto9" data-title="Mini Short White Lentejuelas">
+                <img src="lauty/mini-short-lentejuelas-blanco1.jpg" alt="Mini Short White Lentejuelas">
+            </a>
+
+            <h4>Mini Short White Lentejuelas</h4>
+            <p class="precio">$19.800</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle9">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color9">
+                <option>Blanco</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad9" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(9, 'Mini Short White Lentejuelas', '$19.800')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/pollera-glitter1.jpg" data-lightbox="producto10" data-title="Pollera Glitter">
+                <img src="lauty/pollera-glitter1.jpg" alt="Pollera Glitter">
+            </a>
+            <a href="lauty/pollera-glitter2.jpg" data-lightbox="producto10" data-title="Pollera Glitter"></a>
+            <a href="lauty/pollera-glitter3.jpg" data-lightbox="producto10" data-title="Pollera Glitter"></a>
+            <h4>Pollera Glitter</h4>
+            <p class="precio">$15.500</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle10">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color10">
+                <option>Blanco</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad10" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(10, 'Pollera Glitter', '$15.500')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/remera-acuario-negra1.jpg" data-lightbox="producto11" data-title="Remera Acuario">
+                <img src="lauty/remera-acuario-negra1.jpg" alt="Remera Acuario">
+            </a>
+
+            <h4>Remera Acuario</h4>
+            <p class="precio">$20.450</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle11">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color11">
+                <option>Negro</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad11" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(11, 'Remera Acuario', '$20.450')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/remera-argentina1.jpg" data-lightbox="producto12" data-title="Remera Argentina">
+                <img src="lauty/remera-argentina1.jpg" alt="Remera Argentina">
+            </a>
+            <a href="lauty/remera-argentina2.jpg" data-lightbox="producto12" data-title="Remera Argentina"></a>
+            <h4>Remera Argentina</h4>
+            <p class="precio">$18.000</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle12">
+                <option>M</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color12">
+                <option>Negro</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad12" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(12, 'Remera Argentina', '$18.000')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/remera-rayas1.jpg" data-lightbox="producto13" data-title="Remera Rayas">
+                <img src="lauty/remera-rayas1.jpg" alt="Remera Rayas">
+            </a>
+
+            <h4>Remera Rayas</h4>
+            <p class="precio">$10.000</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle13">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color13">
+                <option>No especificado</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad13" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(13, 'Remera Rayas', '$10.000')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/babytee-morley1.jpg" data-lightbox="producto14" data-title="Baby Tee Morley">
+                <img src="lauty/babytee-morley1.jpg" alt="Baby Tee Morley">
+            </a>
+
+            <h4>Baby Tee Morley</h4>
+            <p class="precio">$10.000</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle14">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color14">
+                <option>No especificado</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad14" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(14, 'Baby Tee Morley', '$10.000')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/babytee-rosa1.jpg" data-lightbox="producto15" data-title="Baby Tee">
+                <img src="lauty/babytee-rosa1.jpg" alt="Baby Tee">
+            </a>
+
+            <h4>Baby Tee</h4>
+            <p class="precio">$12.500</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle15">
+                <option>M</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color15">
+                <option>Negro</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad15" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(15, 'Baby Tee', '$12.500')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/remeron-chiefs1.jpg" data-lightbox="producto16" data-title="Remerón">
+                <img src="lauty/remeron-chiefs1.jpg" alt="Remerón">
+            </a>
+
+            <h4>Remerón</h4>
+            <p class="precio">$21.500</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle16">
+                <option>XXL</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color16">
+                <option>Blanco</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad16" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(16, 'Remerón', '$21.500')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/remera-sacramento1.jpg" data-lightbox="producto17" data-title="Remera Over Sacramento">
+                <img src="lauty/remera-sacramento1.jpg" alt="Remera Over Sacramento">
+            </a>
+            <a href="lauty/remera-sacramento2.jpg" data-lightbox="producto17" data-title="Remera Over Sacramento"></a>
+            <a href="lauty/remera-sacramento3.jpg" data-lightbox="producto17" data-title="Remera Over Sacramento"></a>
+            <h4>Remera Over Sacramento</h4>
+            <p class="precio">$20.500</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle17">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color17">
+                <option>Marrón</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad17" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(17, 'Remera Over Sacramento', '$20.500')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/cargo-white1.jpg" data-lightbox="producto18" data-title="Cargo White">
+                <img src="lauty/cargo-white1.jpg" alt="Cargo White">
+            </a>
+            <a href="lauty/cargo-white2.jpg" data-lightbox="producto18" data-title="Cargo White"></a>
+            <h4>Cargo White</h4>
+            <p class="precio">$27.800</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle18">
+                <option>38</option>
+                <option>40</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color18">
+                <option>Blanco</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad18" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(18, 'Cargo White', '$27.800')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/baggy-negro.jpg" data-lightbox="producto19" data-title="Baggy Negro">
+                <img src="lauty/baggy-negro.jpg" alt="Baggy Negro">
+            </a>
+
+            <h4>Baggy Negro</h4>
+            <p class="precio">$28.800</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle19">
+                <option>42</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color19">
+                <option>Negro</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad19" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(19, 'Baggy Negro', '$28.800')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/wide-leg-celeste1.jpg" data-lightbox="producto20" data-title="Wide Leg Celeste">
+                <img src="lauty/wide-leg-celeste1.jpg" alt="Wide Leg Celeste">
+            </a>
+            <a href="lauty/wide-leg-celeste2.jpg" data-lightbox="producto20" data-title="Wide Leg Celeste"></a>
+            <h4>Wide Leg Celeste</h4>
+            <p class="precio">$28.000</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle20">
+                <option>36</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color20">
+                <option>Celeste</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad20" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(20, 'Wide Leg Celeste', '$28.000')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/baggy-azul1.jpg" data-lightbox="producto21" data-title="Baggy Azul">
+                <img src="lauty/baggy-azul1.jpg" alt="Baggy Azul">
+            </a>
+            <a href="lauty/baggy-azul2.jpg" data-lightbox="producto21" data-title="Baggy Azul"></a>
+            <h4>Baggy Azul</h4>
+            <p class="precio">$28.000</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle21">
+                <option>38</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color21">
+                <option>Azul</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad21" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(21, 'Baggy Azul', '$28.000')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/mom-gris1.jpg" data-lightbox="producto22" data-title="Mom Gris">
+                <img src="lauty/mom-gris1.jpg" alt="Mom Gris">
+            </a>
+            <a href="lauty/mom-gris2.jpg" data-lightbox="producto22" data-title="Mom Gris"></a>
+            <h4>Mom Gris</h4>
+            <p class="precio">$25.000</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle22">
+                <option>36</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color22">
+                <option>Gris</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad22" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(22, 'Mom Gris', '$25.000')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/wide-leg-black1.jpg" data-lightbox="producto23" data-title="Wide Leg Black Tiro Alto">
+                <img src="lauty/wide-leg-black1.jpg" alt="Wide Leg Black Tiro Alto">
+            </a>
+
+            <h4>Wide Leg Black Tiro Alto</h4>
+            <p class="precio">$28.900</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle23">
+                <option>42</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color23">
+                <option>Negro</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad23" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(23, 'Wide Leg Black Tiro Alto', '$28.900')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/baggy-negro2.jpg" data-lightbox="producto24" data-title="Baggy Negro">
+                <img src="lauty/baggy-negro2.jpg" alt="Baggy Negro">
+            </a>
+
+            <h4>Baggy Negro</h4>
+            <p class="precio">$30.000</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle24">
+                <option>40</option>
+                <option>42</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color24">
+                <option>Negro</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad24" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(24, 'Baggy Negro', '$30.000')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/top-negro1.jpg" data-lightbox="producto25" data-title="Top Negro">
+                <img src="lauty/top-negro1.jpg" alt="Top Negro">
+            </a>
+
+            <h4>Top Negro</h4>
+            <p class="precio">$12.500</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle25">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color25">
+                <option>Negro</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad25" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(25, 'Top Negro', '$12.500')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/top-lentejuelas-negro1.jpg" data-lightbox="producto26" data-title="Top Lentejuelas">
+                <img src="lauty/top-lentejuelas-negro1.jpg" alt="Top Lentejuelas">
+            </a>
+
+            <h4>Top Lentejuelas</h4>
+            <p class="precio">$11.450</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle26">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color26">
+                <option>No especificado</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad26" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(26, 'Top Lentejuelas', '$11.450')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/top-glitter-blanco1.jpg" data-lightbox="producto27" data-title="Top Glitter">
+                <img src="lauty/top-glitter-blanco1.jpg" alt="Top Glitter">
+            </a>
+
+            <h4>Top Glitter</h4>
+            <p class="precio">$14.400</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle27">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color27">
+                <option>Blanco</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad27" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(27, 'Top Glitter', '$14.400')">
+                Comprar
+            </button>
+        </article>
+        <article class="producto">
+            <a href="lauty/top-choco1.jpg" data-lightbox="producto28" data-title="Top Choco">
+                <img src="lauty/top-choco1.jpg" alt="Top Choco">
+            </a>
+
+            <h4>Top Choco</h4>
+            <p class="precio">$12.200</p>
+
+            <label><b>Talle:</b></label>
+            <select id="talle28">
+                <option>Único</option>
+            </select>
+
+            <label><b>Color:</b></label>
+            <select id="color28">
+                <option>Chocolate</option>
+            </select>
+
+            <label><b>Cantidad:</b></label>
+            <input type="number" id="cantidad28" value="1" min="1">
+
+            <button class="boton" onclick="comprarProducto(28, 'Top Choco', '$12.200')">
+                Comprar
+            </button>
+        </article>
 </div>
-    
-<div class="productos">
 
-    <div class="producto">
-        <h4>Pollera ecocuero</h4>
-
-        <a href="lauty/pollera6.jpg" data-lightbox="pollera">
-            <img src="lauty/pollera6.jpg" alt="Pollera ecocuero">
-        </a>
-
-        <a href="lauty/pollera8.jpg" data-lightbox="pollera"></a>
-       
-        <p>$12.800</p>
-<label><b>Talle:</b></label><br>
-
-<select id="talle1">
-    <option>UNICO</option>
-    
-</select>
-
-<br><br>
-
-<label><b>Color:</b></label><br>
-
-<select id="color1">
-    <option>Negro</option>
-  
-</select>
-
-<br><br>
-
-<label><b>Cantidad:</b></label><br>
-
-<input type="number" id="cantidad1" value="1" min="1" style="width:60px;text-align:center;">
-
-<br><br>
-        <button class="boton" onclick="comprarProducto()">
-Comprar
-</button>
-
-</div>
-</div>
-    
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
 <script>
+function comprarProducto(id, nombre, precio) {
+    const talle = document.getElementById("talle" + id).value;
+    const color = document.getElementById("color" + id).value;
+    const cantidad = document.getElementById("cantidad" + id).value;
 
-function comprarProducto(){
-
-let talle = document.getElementById("talle1").value;
-
-let color = document.getElementById("color1").value;
-
-let cantidad = document.getElementById("cantidad1").value;
-
-let mensaje =
-`Hola LAUKA! 👋
+    const mensaje = `Hola LAUKA! 👋
 
 Quiero comprar el siguiente producto:
 
-🛍 Producto: Short Pollera
-
+🛍 Producto: ${nombre}
+💰 Precio: ${precio}
 📏 Talle: ${talle}
-
 🎨 Color: ${color}
-
 📦 Cantidad: ${cantidad}`;
 
-window.open(
-"https://wa.me/5492324502846?text="+encodeURIComponent(mensaje),
-"_blank"
-);
-
+    window.open(
+        "https://wa.me/5492324502846?text=" + encodeURIComponent(mensaje),
+        "_blank"
+    );
 }
-
 </script>
+
 </body>
 </html>
