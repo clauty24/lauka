@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LAUKA - Tienda de Ropa</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+.logo{
+    width:100%;
+    display:block;
+    margin:0;
+    border-radius:0;
+}
+
+header{
+    background:white;
+    padding:0;
+    margin:0;
+}
+
+.banner{
+    background:#111;
+    color:white;
+    padding:40px;
+    margin-bottom:30px;
+}
+.productos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding:30px;
+}
+        .producto{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    width:220px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.producto:hover{
+    transform:translateY(-5px);
+}
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .boton{
+    background:#111;
+    color:white;
+    padding:12px 25px;
+    font-weight:bold;
+    text-decoration:none;
+    border-radius:6px;
+    display:block;
+    width:160px;
+    margin:15px auto 0;
+    text-align:center;
+}
+
+        .boton:hover {
+            background-color: #333;
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+</head>
+
+<body>
+
+    <header>
+
+<img src="logo.png" class="logo" alt="LAUKA">
+
+<p>Tienda de ropa femenina 💕</p>
+
+</header>
+
+<section class="banner">
+
+<h2>Nueva colección LAUKA</h2>
+
+<p>Moda femenina • Envíos a todo el país</p>
+
+</section>
+
+    <h3>PRODUCTOS</h3>
+
+<div class="productos">
+
+<div class="producto">
+        <h4>Short pollera Talle ÚNICO color choco - negro - beige</h4>
+        <a href="pollera.jpg" data-lightbox="pollera" data-title="Short Pollera">
+    <img src="pollera.jpg" alt="Short Pollera">
+</a>
+
+<a href="pollera0.jpg" data-lightbox="pollera"></a>
+        <p>$12.800</p>
+        <a class="boton"
+href="https://wa.me/5492324502846?text=Hola%20LAUKA!%20%F0%9F%91%8B%0A%0AQuiero%20comprar%20este%20producto:%0A%0A%F0%9F%9B%8D%20Producto:%20Short%20Pollera%0A%F0%9F%93%8F%20Talle:%20%0A%F0%9F%8E%A8%20Color:%20%0A%F0%9F%93%A6%20Cantidad:%20"
+target="_blank">
+Comprar
+</a>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</body>
+</html>
